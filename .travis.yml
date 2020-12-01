@@ -10,7 +10,7 @@ before_install: docker build -t dk99521/react-test-app -f ./frontend/Dockerfile.
 script:
   - docker run -e CI=true dk99521/react-test-app npm run test
 
-after_install:
+after_success:
   - docker build -t dk99521/docker-frontend ./frontend
   - docker build -t dk99521/docker-backend ./backend
   - docker build -t dk99521/docker-nginx ./nginx
