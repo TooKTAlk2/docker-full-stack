@@ -20,3 +20,15 @@ after_success:
   - docker push dk99521/docker-frontend
   - docker push dk99521/docker-backend
   - docker push dk99521/docker-nginx
+deploy:
+  provider: elasticbeanstalk
+  region: 'ap-northeast-2'
+  app: 'docker-fullstack-app'
+  env: 'DockerFullstackApp-env'
+  bucket_name: elasticbeanstalk-ap-northeast-2-778416932424
+  bucket_path: 'docker-fullstack-app'
+  on:
+    branch: master
+
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
