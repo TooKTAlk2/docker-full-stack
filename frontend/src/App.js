@@ -34,7 +34,7 @@ function App() {
     event.preventDefault();
 
 
-    axios.post('/api/value', { text : text })
+    axios.post('/api/value', { value : value })
       .then(response => {
         if (response.data.success) {
           console.log('response', response)
