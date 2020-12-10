@@ -33,7 +33,8 @@ function App() {
   const submitHandler = (event) => {
     event.preventDefault();
 
-    axios.post('/api/value', { value: value })
+
+    axios.post('/api/value', { text : text })
       .then(response => {
         if (response.data.success) {
           console.log('response', response)
