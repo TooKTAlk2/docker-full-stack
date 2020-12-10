@@ -24,7 +24,7 @@ app.use(bodyParser.json())
 // DB lists 테이블에 있는 모든 데이터를 프론트 서버로 보내기
 app.get('/api/values',function(req,res){
   // 데이터베이스 lists 테이블에서 모든 정보를  가져오기
-  db.pool.query('SELECT * FORM lists;',
+  db.pool.query('SELECT * FROM lists;',
   (err,results,fileds)=>{
     if(err){
       console.log("err");
